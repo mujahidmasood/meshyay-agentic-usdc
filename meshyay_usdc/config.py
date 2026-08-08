@@ -17,8 +17,11 @@ class Settings:
     circle_api_key: str = os.getenv("CIRCLE_API_KEY", "")
     circle_entity_secret: str = os.getenv("CIRCLE_ENTITY_SECRET", "")
     circle_wallet_id: str = os.getenv("CIRCLE_WALLET_ID", "")
-    # Testnet USDC token by default — mainnet is a deliberate change.
-    circle_usdc_token_id: str = os.getenv("CIRCLE_USDC_TOKEN_ID", "USDC-ETH-SEPOLIA")
+    # Circle token id (UUID) for the USDC to send. Default = USDC on Ethereum
+    # Sepolia (testnet); Circle token ids are a global catalog so this UUID is
+    # the same for every account. Mainnet USDC is a different UUID.
+    circle_usdc_token_id: str = os.getenv(
+        "CIRCLE_USDC_TOKEN_ID", "5797fbd6-3795-519d-84ca-ec4c5f80c3b1")
     # Policy cap: the agent auto-settles payouts at/under this many USD in USDC;
     # anything larger is held for a human.
     usdc_auto_cap_usd: float = float(os.getenv("USDC_AUTO_CAP_USD", "50"))

@@ -48,7 +48,7 @@ def within_auto_cap(amount_usd: float) -> bool:
 
 ## Safety
 
-- **Testnet by default** — `circle_usdc_token_id = USDC-ETH-SEPOLIA`. Mainnet is
+- **Testnet by default** — the Sepolia USDC token UUID. Mainnet is
   a deliberate config change (mainnet token id + a mainnet-funded wallet).
 - **Optional per supplier** — a supplier is only paid in USDC if they provide a
   wallet address; otherwise the existing (Stripe) rail is used. No supplier is
@@ -71,7 +71,7 @@ Set these in your environment (never commit them):
 export CIRCLE_API_KEY=...             # Circle sandbox API key
 export CIRCLE_ENTITY_SECRET=...       # registered entity secret
 export CIRCLE_WALLET_ID=...           # a funded testnet wallet in your wallet set
-export CIRCLE_USDC_TOKEN_ID=USDC-ETH-SEPOLIA
+export CIRCLE_USDC_TOKEN_ID=5797fbd6-3795-519d-84ca-ec4c5f80c3b1  # USDC ETH-SEPOLIA (default)
 export USDC_AUTO_CAP_USD=50
 ```
 
